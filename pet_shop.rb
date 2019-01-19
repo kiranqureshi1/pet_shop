@@ -21,14 +21,14 @@ def pets_sold(pet_shop)
   return pet_shop[:admin][:pets_sold]
 end
 
-#
-# def increase_pets_sold(pet_shop, amount)
-#   pets_sold_before = pet_shop[:admin][:pets_sold]
-#   pets_sold_after = pet_shop[:admin][:pets_sold] += amount
-#   if pets_sold_before < pets_sold_after
-#     return pets_sold_before + amount
-#  end
-# end
+
+def increase_pets_sold(pet_shop, amount)
+  pets_sold_before = pet_shop[:admin][:pets_sold]
+  pets_sold_after = pet_shop[:admin][:pets_sold] += amount
+  if pets_sold_before < pets_sold_after
+    return pets_sold_before + amount
+ end
+end
 
 def stock_count(pet_shop)
     return pet_shop[:pets].length
@@ -50,10 +50,9 @@ end
 # def find_pet_by_name(pet_shop, name)
 #   for pet in pet_shop[:pets]
 #     if pet[:name] == name
-#       return pet[:name]............
+#       return pet[:name]
 #    end
 #  end
-#  return nil
 # end
 
 # def remove_pet_by_name(pet_shop, name)
@@ -94,3 +93,31 @@ def customer_can_afford_pet(customer, new_pet)
     return false
   end
 end
+
+
+def find_pet_by_name(pet_shop, name)
+  for pet in pet_shop[:pets]
+    if pet[:name] == name
+    return pet_shop[:name]
+   end
+  end
+end
+
+# def sell_pet_to_customer(pet_shop, pet, customer)
+#   customer_pets_before = customer[:pets]
+#   customer_pets_after = customer[:pets] << pet
+#   customer_cash_before = customer[:cash]
+#   customer_cash_after = customer[:cash] - pet[:price]
+#   pets_in_pet_shop_before = pet_shop[:pets]
+#   pets_in_pet_shop_after = pet_shop[:pets] - pet
+#   if customer_pets_before != customer_pets_after && customer_cash_before != customer_cash_after && pets_in_pet_shop_before != pets_in_pet_shop_after
+#        customer[:pets] << pet
+#        customer[:cash] - pet[:price]
+#
+#         p customer[:pets].count, pet_shop[:pets].count, customer_cash_after, pet[:price]
+#     end
+# end
+#   for item in pet_shop[pets]
+# if customer[:price]
+#   if pet_shop[:pets][:price] = customer_cash_before - customer_cash_after
+#     return customer_cash_before - customer_cash_after pet[:price]
