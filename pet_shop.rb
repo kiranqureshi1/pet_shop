@@ -43,16 +43,16 @@ end
       end
     end
     return total
-    # p total.count
 end
 
-
+# 
 # def find_pet_by_name(pet_shop, name)
 #   for pet in pet_shop[:pets]
 #     if pet[:name] == name
-#       return pet[:name]
+#       return pet
 #    end
 #  end
+#  return nil
 # end
 
 # def remove_pet_by_name(pet_shop, name)
@@ -73,9 +73,9 @@ def customer_cash(customer)
 end
 
 
-# def remove_customer_cash(customer, cash)
-#    return customer[:cash] - cash
-# end
+def remove_customer_cash(customer, cash)
+   return customer[:cash] -= cash
+end
 
 def customer_pet_count(customer)
   p customer[:pets].count
